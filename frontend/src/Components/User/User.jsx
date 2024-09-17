@@ -1,103 +1,114 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
-import { useNavigate } from "react-router-dom";
-import "./User.css";
-
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import './User.css';
 
 export default function User() {
   const [cread, setcread] = useState({
-      address: '',
-      pincode: '',
-      
+    address: '',
+    pincode: '',
   });
-  const navigate = useNavigate()
-  
+
+  const navigate = useNavigate();
+
+  const parseAddress = (rawAddress) => {
+    return {
+      address: rawAddress,
+      pincode: cread.pincode,
+    };
+  };
+
   const Submit = async (e) => {
-      e.preventDefault();  // Corrected here
-      try {
-          const response = await fetch('http://localhost:4000/userdata/send', {
-              method: "POST",
-              headers: {
-                  'Content-Type': 'application/json',
-              },
-              body: JSON.stringify(cread),
-          });
-          const data = await response.json();
-          if (response.ok) {
-              setcread({
-                  address: "",
-                  pincode: "",
-                  
-              });
-//              navigate("/login");
-          } else {
-              console.log("Error inside");
-          }
-      } catch (err) {
-          console.error("An error occurred:", err);  // Added error handling
+    e.preventDefault();
+    try {
+      const structuredAddress = parseAddress(cread.address);
+      
+      const response = await fetch('http://localhost:5000/find-post-office', {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(structuredAddress),
+      });
+  
+      const data = await response.json();
+  
+      if (response.ok) {
+        const nearestOffice = data ? 
+          `Office Name: ${data.OfficeName}, City: ${data.District}, State: ${data.StateName}, Pincode: ${data.Pincode}` :
+          "No data available";
+        Swal.fire({
+          title: 'Nearest Office',
+          text: nearestOffice,
+          icon: 'success',
+          confirmButtonText: 'OK'
+        });
+  
+        setcread({
+          address: "",
+          pincode: "",
+        });
+      } else {
+        Swal.fire({
+          title: 'Error',
+          text: data.error || 'An unexpected error occurred',
+          icon: 'error',
+          confirmButtonText: 'OK'
+        });
       }
+    } catch (err) {
+      Swal.fire({
+        title: 'Error',
+        text: 'An error occurred: ' + err.message,
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
+    }
   }
 
   const change = (e) => {
-      const { name, value } = e.target;
-      setcread({ ...cread, [name]: value });
+    const { name, value } = e.target;
+    setcread({ ...cread, [name]: value });
   };
 
-// export default function user() {
   return (
-
-    <form onSubmit={Submit}>
-      <div className='container_user p-3'>
-      <div class=" p-3">
-        <div class="row">
-          <div class="col">
-            video
-          </div>
-          <div class="col">
-            <form>
-              <div class="mb-6">
-                <label for="exampleInputEmail1" class="form-label">Address</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id='address'
-                  name="address"
-                  value={cread.address}
-                  onChange={change}
-
-                />
-
+    <>
+      <form onSubmit={Submit}>
+        <div className='container_user p-3'>
+          <div className="p-3">
+            <div className="row">
+              <div className="col">
+                video
               </div>
-              <div class="mb-6">
-                <label for="exampleInputPassword1" class="form-label">PIN CODE</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id='pincode'
-                  name="pincode"
-                  value={cread.pincode}
-                  onChange={change}
-
-
-                />
+              <div className="col">
+                <div className="mb-6">
+                  <label htmlFor="address" className="form-label">Address</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id='address'
+                    name="address"
+                    value={cread.address}
+                    onChange={change}
+                  />
+                </div>
+                <div className="mb-6">
+                  <label htmlFor="pincode" className="form-label">PIN CODE</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id='pincode'
+                    name="pincode"
+                    value={cread.pincode}
+                    onChange={change}
+                  />
+                </div>
+                <button type="submit" className="btn btn-primary">Submit</button>
               </div>
-
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+            </div>
           </div>
-
         </div>
-      </div>
-
-    </div>
-
-
-
-
-
-    </form>
-
-
-    
-  )
+      </form>
+    </>
+  );
 }
