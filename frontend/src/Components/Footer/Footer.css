@@ -1,0 +1,77 @@
+/* Ensure the whole page layout is structured properly */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Make the root container span the full viewport height */
+}
+
+.content {
+    flex-grow: 1; /* Make the content area take up the remaining space */
+}
+
+/* Footer general styling */
+.footer {
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
+
+/* Footer logo */
+.footer svg {
+    height: 30px;
+    width: auto;
+}
+
+/* Footer text */
+.footer p {
+    font-size: 14px;
+    color: #6c757d;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Footer navigation links */
+.nav {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.nav-link {
+    color: #6c757d;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-link:hover {
+    color: #0056b3;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .nav {
+        justify-content: center;
+    }
+}

@@ -1,10 +1,42 @@
-.search{
-    padding: 6px;
-    background-color: rgb(255, 101, 101);
-    border-radius: 10px;
+/* Navbar.css */
+
+.navbar {
+    padding: 1rem; /* Adjust the padding if needed */
 }
-.admin{
-    /* border: 2px solid black; */
-    border-radius: 5px;
-    background-color: rgb(253, 111, 111);
+
+.navbar-logo {
+    width: 100px; /* Adjust the width of the logo image */
+    height: 50px; /* Maintain aspect ratio */
 }
+
+.nav-icon {
+    margin-right: 0.5rem; /* Space between icon and text */
+}
+
+.red-icon {
+    color: red; /* Red color for the icons */
+}
+
+.nav-item .nav-link {
+    color: black; /* Default text color */
+}
+
+
+
+.nav-item .nav-link:hover {
+    color: #0056b3; /* Change color on hover if desired */
+}
+
+.nav-item .nav-link.admin {
+    color: black; /* Black color for the 'Admin' link text */
+    background-color: red; /* Red background color for 'Admin' link */
+    padding: 0.5rem 1rem; /* Add some padding to make the background visible */
+    border-radius: 0.25rem; /* Optional: rounded corners for the background */
+}
+
+.nav-item .nav-link.admin:hover {
+    background-color: darkred; /* Darker red background on hover */
+    color: white; /* Change text color to white on hover for better contrast */
+}
+
+
