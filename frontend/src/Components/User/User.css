@@ -7,3 +7,27 @@
     font-size: 1rem;
     margin-top: 1rem; /* Added margin to push button down */
 }
+.form-control {
+    overflow: hidden;  /* Hide scroll bars */
+    white-space: nowrap; /* Prevent text wrapping */
+    text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+  }
+  
+  /* Optional: Ensure consistent sizing */
+  .container_user {
+    max-width: 100%; /* Make sure the container does not overflow */
+  }
+  
+  /* Adjust form field sizes */
+  .mb-6 input {
+    width: 100%; /* Make sure inputs take full width of their container */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+  }
+
+  .Toastify__toast-container {
+    top: 50% !important; /* Center vertically */
+    left: 50% !important; /* Center horizontally */
+    transform: translate(-50%, -50%) !important; /* Adjust position to exact center */
+    position: fixed !important; /* Ensure the toast container is fixed in position */
+    z-index: 9999; /* Ensure it appears above other elements */
+  }
