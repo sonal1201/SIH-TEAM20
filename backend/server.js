@@ -11,10 +11,13 @@ app.use(express.json());
 app.get('/',(req,res)=>{
     res.send("welcome to backend ")
 })
+
 const adminRoutes = require('./routes/adimRoutes');
 app.use('/Admin',adminRoutes);
+
+
 const userdataRoutes=require('./routes/userdataRoutes');
-app.use('./userdata',userdataRoutes);
+app.use('/userdata',userdataRoutes);
 
 app.listen(port,()=>{
     console.log("server started");

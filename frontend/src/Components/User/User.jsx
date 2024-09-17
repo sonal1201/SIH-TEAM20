@@ -15,7 +15,7 @@ export default function User() {
   const Submit = async (e) => {
       e.preventDefault();  // Corrected here
       try {
-          const response = await fetch('http://localhost:4000/user/userdata', {
+          const response = await fetch('http://localhost:4000/userdata/send', {
               method: "POST",
               headers: {
                   'Content-Type': 'application/json',
@@ -25,12 +25,11 @@ export default function User() {
           const data = await response.json();
           if (response.ok) {
               setcread({
-                  email: "",
-                  username: "",
-                  password: "",
-                  location: ""
+                  address: "",
+                  pincode: "",
+                  
               });
-              navigate("/login");
+//              navigate("/login");
           } else {
               console.log("Error inside");
           }
