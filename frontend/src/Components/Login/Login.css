@@ -1,0 +1,45 @@
+/* Login.css */
+
+.center-container{
+    align-items: center;
+    justify-content: center;
+    margin-top: 9%;
+
+
+}
+form {
+    background-color: #fefafa; /* White background for the form */
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow around the form */
+    
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-control {
+    border-radius: 0.25rem; /* Rounded corners for inputs */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Bootstrap primary button color */
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    color: #fff; /* White text color */
+    font-size: 1rem;
+}
+
+.btn-primary:hover {
+    background-color: #090b0d; /* Darker blue on hover */
+}
+
+.ms-3 {
+    margin-left: 1rem; /* Margin for spacing between buttons */
+}
+
+.form-text {
+    color: #6c757d; /* Bootstrap form text color */
+}

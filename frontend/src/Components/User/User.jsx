@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
-
+import "./User.css";
 
 
 export default function User() {
@@ -48,7 +48,7 @@ export default function User() {
   return (
 
     <form onSubmit={Submit}>
-      <div className='container p-3'>
+      <div className='container_user p-3'>
       <div class=" p-3">
         <div class="row">
           <div class="col">
@@ -56,7 +56,7 @@ export default function User() {
           </div>
           <div class="col">
             <form>
-              <div class="mb-3">
+              <div class="mb-6">
                 <label for="exampleInputEmail1" class="form-label">Address</label>
                 <input
                   type="text"
@@ -69,7 +69,7 @@ export default function User() {
                 />
 
               </div>
-              <div class="mb-3">
+              <div class="mb-6">
                 <label for="exampleInputPassword1" class="form-label">PIN CODE</label>
                 <input
                   type="text"
