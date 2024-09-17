@@ -31,7 +31,7 @@ export default function Login()
             if (response.ok) {
                 localStorage.setItem("authToken",data.authToken);
                 console.log(localStorage.getItem("authToken"));
-                navigate("/")
+                navigate("/Admin")
             }
             else {
                 alert("Enter valid credentials")

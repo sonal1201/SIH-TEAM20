@@ -1,16 +1,33 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
+import swal from 'sweetalert2'
 
 
 
 export default function User() {
+  const popup=()=>{
+    swal.fire({
+      title: 'This is a pop-up!',
+      backdrop: `
+        rgba(0,0,1,1)
+        // url("https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif")
+        center left
+        no-repeat
+      `,
+      customClass: {
+        popup: 'popup-blur'
+      }
+    });
+  }
+
+
   const [cread, setcread] = useState({
       address: '',
       pincode: '',
       
   });
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
   
   const Submit = async (e) => {
       e.preventDefault();  // Corrected here
@@ -43,10 +60,9 @@ export default function User() {
       setcread({ ...cread, [name]: value });
   };
 
-// export default function user() {
   return (
 
-    <form onSubmit={Submit}>
+    // <form >
       <div className='container p-3'>
       <div class=" p-3">
         <div class="row">
@@ -54,7 +70,7 @@ export default function User() {
             video
           </div>
           <div class="col">
-            <form>
+            <form onSubmit={Submit}>
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Address</label>
                 <input
@@ -64,7 +80,7 @@ export default function User() {
                   name="address"
                   value={cread.address}
                   onChange={change}
-
+ 
                 />
 
               </div>
@@ -82,7 +98,7 @@ export default function User() {
                 />
               </div>
 
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary" onClick={popup}>Submit</button>
             </form>
           </div>
 
@@ -95,7 +111,7 @@ export default function User() {
 
 
 
-    </form>
+    // </form>
 
 
     

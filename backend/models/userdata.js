@@ -2,12 +2,12 @@ const { default: mongoose } = require("mongoose");
 
 const userdataSchema=new mongoose.Schema({
     address:{
-        require:true,
+        required: true, 
         type:String,
         
     },
     pincode:{
-        requre:true,
+        required: true, 
         type:Number
     }
 

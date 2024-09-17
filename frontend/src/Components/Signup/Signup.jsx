@@ -51,7 +51,8 @@ export default function Signup() {
             <form className='w-50' onSubmit={Submit}>
                 <div className="mb-3">
                     <label htmlFor="exampleInputEmail1" className="form-label">UserName</label>
-                    <input type="text"
+                    <input 
+                        type="text"
                         className="form-control"
                         id="username"
                         name="username"
@@ -62,7 +63,8 @@ export default function Signup() {
 
                 <div className="mb-3">
                     <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-                    <input type="email"
+                    <input 
+                        type="email"
                         className="form-control"
                         id="email"
                         name="email"

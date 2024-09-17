@@ -7,9 +7,14 @@ export default function Home() {
   return (
     <div>
         <div> <Navbar/> </div>
-        <div> <User/> </div>
+        {(!localStorage.getItem("authtoken")) ?
+                    <div> <User/> </div>
+          :
+          <div>
+            this is admin page
+          </div>
+          }
         <div> <Footer/> </div>
-
       
     </div>
   )
