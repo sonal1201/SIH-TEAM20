@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom"
-
+import "./Signup.css"
 export default function Signup() {
     const [cread, setcread] = useState({
         email: '',
@@ -47,12 +47,11 @@ export default function Signup() {
     };
 
     return (
-        <div className='container  d-flex justify-content-center align-items-center'>
+        <div className='container1  d-flex justify-content-center align-items-center'>
             <form className='w-50' onSubmit={Submit}>
-                <div className="mb-3">
+                <div className="mb-10">
                     <label htmlFor="exampleInputEmail1" className="form-label">UserName</label>
-                    <input 
-                        type="text"
+                    <input type="text"
                         className="form-control"
                         id="username"
                         name="username"
@@ -61,10 +60,9 @@ export default function Signup() {
                     />
                 </div>
 
-                <div className="mb-3">
+                <div className="mb-16">
                     <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-                    <input 
-                        type="email"
+                    <input type="email"
                         className="form-control"
                         id="email"
                         name="email"
@@ -73,7 +71,7 @@ export default function Signup() {
                     />
                     <div id="emailHelp" className="form-text ">We'll never share your email with anyone else.</div>
                 </div>
-                <div className="mb-3">
+                <div className="mb-9  ">
                     <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
                     <input type="password"
                         className="form-control"

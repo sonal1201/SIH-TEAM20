@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from "react-router-dom"
-
+import "./Login.css";
 export default function Login() 
 {
     const navigate = useNavigate()
@@ -44,7 +44,7 @@ export default function Login()
 
     return (
 
-        <div className='container  bg-balck d-flex justify-content-center align-items-center'>
+        <div className='center-container  bg-balck d-flex justify-content-center align-items-center'>
             <form className='w-50 ' onSubmit={submit}>
 
                 <div className="mb-3">

@@ -1,0 +1,35 @@
+
+.container {
+    margin-top: 20px;
+  }
+  
+  .card {
+    margin-bottom: 20px;
+  }
+  
+  .camera-section {
+    padding: 15px;
+    border: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+    /* You can add additional styling for the camera section here */
+  }
+  
+  .form_admin {
+    padding: 15px;
+    border: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+  }
+  
+  .card-container {
+    max-height: 500px; /* Adjust the max height */
+    overflow-y: auto; /* Allows vertical scrolling */
+    padding: 10px;
+  }
+  
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
