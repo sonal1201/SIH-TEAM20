@@ -75,3 +75,25 @@ html, body {
         justify-content: center;
     }
 }
+/* Footer.css or global stylesheet */
+.footer {
+    background-color: #343a40; /* Dark background color */
+    color: white; /* Set default text color to white */
+  }
+  
+  .footer .text-muted {
+    color: white; /* Override any text-muted color to white */
+  }
+  
+  .footer .nav-link {
+    color: white; /* Ensure all nav-link colors are white */
+  }
+  
+  .footer .nav-link:hover {
+    color: #ddd; /* Optional: lighter color on hover */
+  }
+  
+  .footer svg {
+    fill: white; /* Ensure SVG icons are white */
+  }
+  

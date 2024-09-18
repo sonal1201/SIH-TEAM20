@@ -6,14 +6,14 @@ import logo from './finallogo2.png'; // Import the logo image
 
 export default function Navbar() {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light ">
+        <nav className="navbar navbar-expand-lg navbar-light bg-dark ">
             <div className="container-fluid">
                 <div className="navbar-brand p-0">
-                    <img 
-                        src={logo}   
-                        alt="Logo" 
-                        className="navbar-logo"
-                    />
+                
+                    <div class="logo">
+                            POSTIFY
+                    </div>
+
                 </div>
                 <button 
                     className="navbar-toggler" 
@@ -31,14 +31,14 @@ export default function Navbar() {
                     id="navbarSupportedContent"
                 >
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li className="nav-item">
-                            <Link className="nav-link" aria-current="page" to="/">
-                                <FaHome className="nav-icon red-icon" /> Home
+                        <li className="nav-item" >
+                            <Link className="nav-link" aria-current="page" to="/"style={{ color: 'white' }}>
+                                <FaHome className="nav-icon red-icon " /> Home
                             </Link>
                         </li>
                         <li className="nav-item admin">
-                            <Link className="nav-link" aria-current="page" to="/Login">
-                                <FaUserShield className="nav-icon red-icon" /> Admin
+                            <Link className="nav-link" aria-current="page" to="/Login"style={{ color: 'white' }}>
+                                <FaUserShield className="nav-icon red-icon " /> Admin
                             </Link>
                         </li>
                     </ul>
