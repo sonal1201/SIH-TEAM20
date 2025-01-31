@@ -11,7 +11,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Your Google API Key
-API_KEY = 'AIzaSyBZlpDfwVnYL1pTjI3SxKtEVm1chTRlT3o'
+API_KEY = ''
 
 def get_coordinates_and_postal_code(address):
     """
